@@ -14,6 +14,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import com.example.scholateacher.Class.ControlImage
+import com.example.scholateacher.Class.MyClass
 import com.example.scholateacher.Fragments.AdvCourseFragment
 import com.example.scholateacher.Fragments.AdvHomeFragment
 import com.example.scholateacher.Fragments.AdvScheduleFragment
@@ -29,11 +33,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class AdvHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var binding : ActivityAdvHomeBinding
     lateinit var headerView: View
-
+    lateinit var controlImage : ControlImage
     lateinit var largeProfilePic : ImageView
     lateinit var name: TextView
     lateinit var designation: TextView
     lateinit var department: TextView
+
+    var flag:Boolean = false
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +52,7 @@ class AdvHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         binding = ActivityAdvHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        controlImage = ControlImage(this, this.activityResultRegistry, "imagePickerKey")
         headerView = binding.navView.getHeaderView(0)
         largeProfilePic = headerView.findViewById(R.id.largeProfilePic)
         name = headerView.findViewById(R.id.name)
@@ -52,9 +60,10 @@ class AdvHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         department = headerView.findViewById(R.id.department)
 
         setUpForNavigationDrawer()
-        setProfileCircle()
+        setProfilePic()
         handleMenuIconClick()
         setupBottomNavigation()
+        setFragment(AdvHomeFragment())
 
 
 
@@ -98,18 +107,24 @@ class AdvHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         binding.navView.setNavigationItemSelectedListener(this)
     }
 
-    private fun setProfileCircle() {
-        Glide.with(this)
-            .load(R.drawable.stuprofile)
-            .apply(RequestOptions.circleCropTransform())
-            .into(binding.profilePic)
+    private fun setProfilePic() {
 
 
 
-        Glide.with(this)
-            .load(R.drawable.stuprofile)
-            .apply(RequestOptions.circleCropTransform())
-            .into(largeProfilePic)
+
+
+
+        MyClass().getCurrentTeacher{ teacher ->
+            if (teacher != null) {
+                controlImage.setImageByURl(teacher.profilePic.toString(),binding.profilePic)
+                controlImage.setImageByURl(teacher.profilePic.toString(),largeProfilePic)
+
+            } else {
+            }
+        }
+
+
+
 
     }
 
@@ -146,6 +161,21 @@ class AdvHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
+
+    fun setFragment(fragment: Fragment){
+        val fragmentManager : FragmentManager = supportFragmentManager
+        val frammentTransition : FragmentTransaction = fragmentManager.beginTransaction()
+
+        if(!flag){
+            frammentTransition.add(R.id.frame,fragment)
+            flag = true
+        }
+        else{
+            frammentTransition.replace(R.id.frame,fragment)
+        }
+        frammentTransition.commit()
+    }
+
 }
 
 

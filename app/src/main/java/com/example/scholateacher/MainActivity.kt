@@ -2,33 +2,43 @@ package com.example.scholateacher
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.example.scholateacher.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import com.example.scholateacher.Class.ControlImage
+import com.example.scholateacher.Class.MyClass
 import com.example.scholateacher.Fragments.HomeFragment
 import com.example.scholateacher.Fragments.MessageFragment
 import com.example.scholateacher.Fragments.ProfileFragment
 import com.example.scholateacher.Fragments.TimeTableFragment
 import com.example.scholateacher.Model.Teacher
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var binding : ActivityMainBinding
     lateinit var headerView: View
+    lateinit var controlImage : ControlImage
+    var flag:Boolean = false
 
     lateinit var largeProfilePic : ImageView
     lateinit var name: TextView
     lateinit var designation: TextView
     lateinit var department: TextView
+
+    lateinit var auth: FirebaseAuth
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,16 +46,27 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        controlImage = ControlImage(this, this.activityResultRegistry, "imagePickerKey")
         headerView = binding.navView.getHeaderView(0)
         largeProfilePic = headerView.findViewById(R.id.largeProfilePic)
         name = headerView.findViewById(R.id.name)
         designation = headerView.findViewById(R.id.designation)
         department = headerView.findViewById(R.id.department)
+        auth = FirebaseAuth.getInstance()
+
+
+
+
+
 
         setUpForNavigationDrawer()
-        setProfileCircle()
+        setProfilePic()
         handleMenuIconClick()
         setupBottomNavigation()
+        setFragment(HomeFragment())
+
+
+
 
 
 
@@ -53,11 +74,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     }
 
-    private fun set2() {
 
 
-
-    }
 
     private fun setupBottomNavigation() {
         val bottomNavigationView: BottomNavigationView = binding.bottomNavigationView
@@ -89,18 +107,22 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         binding.navView.setNavigationItemSelectedListener(this)
     }
 
-    private fun setProfileCircle() {
-        Glide.with(this)
-            .load(R.drawable.stuprofile)
-            .apply(RequestOptions.circleCropTransform())
-            .into(binding.profilePic)
+    private fun setProfilePic() {
 
 
 
-        Glide.with(this)
-            .load(R.drawable.stuprofile)
-            .apply(RequestOptions.circleCropTransform())
-            .into(largeProfilePic)
+
+        MyClass().getCurrentTeacher{ teacher ->
+            if (teacher != null) {
+                controlImage.setImageByURl(teacher.profilePic.toString(),binding.profilePic)
+                controlImage.setImageByURl(teacher.profilePic.toString(),largeProfilePic)
+
+            } else {
+            }
+        }
+
+
+
 
     }
 
@@ -145,12 +167,30 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 //supportFragmentManager.beginTransaction().replace(R.id.content_frame, SettingsFragment()).commit()
             }
             R.id.nav_logout -> {
-                // Handle Logout click
+               auth.signOut()
+                startActivity(Intent(this,LoginActivity::class.java))
+                finish()
             }
         }
         binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
+
+
+    fun setFragment(fragment: Fragment){
+        val fragmentManager : FragmentManager = supportFragmentManager
+        val frammentTransition : FragmentTransaction = fragmentManager.beginTransaction()
+
+        if(!flag){
+            frammentTransition.add(R.id.frame,fragment)
+            flag = true
+        }
+        else{
+            frammentTransition.replace(R.id.frame,fragment)
+        }
+        frammentTransition.commit()
+    }
+
 }
 
 

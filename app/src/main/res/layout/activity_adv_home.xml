@@ -53,17 +53,24 @@
                         />
 
 
-                    <ImageView
-                        android:id="@+id/profilePic"
+
+                    <androidx.cardview.widget.CardView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:scaleType="centerCrop"
                         android:layout_alignParentRight="true"
-                        android:src="@drawable/stuprofile"
-                        android:background="@drawable/circle_image_background"
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="40dp"
-                        />
+                        app:cardCornerRadius="50dp"
+                        >
+                        <ImageView
+                            android:id="@+id/profilePic"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/user"
+                            android:background="@drawable/circle_image_background"
+                            />
+                    </androidx.cardview.widget.CardView>
 
 
 
