@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/nav_class_routine"
+        android:title="Class Routine"
+        android:icon="@drawable/ic_class_routine"/>
+
+    <item
+        android:id="@+id/nav_result"
+        android:title="Result"
+        android:icon="@drawable/ic_class_routine"/>
+
+
+
+</menu>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:background="@color/bg_color"
+    android:orientation="vertical"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <ImageView
+
+            android:layout_alignParentRight="true"
+            android:src="@drawable/light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/first"
+        android:orientation="vertical"
+        android:gravity="center"
+
+        >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log In"
+            android:textSize="42sp"
+            android:textStyle="bold"
+            android:textColor="@color/base_color"
+            android:layout_marginBottom="70dp"
+            android:layout_gravity="center"
+
+
+            />
+
+
+        <EditText
+            android:id="@+id/editId"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/form_edit_background"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:hint="ID"
+            android:paddingLeft="20dp"
+            android:textSize="22sp"
+            />
+
+        <EditText
+            android:id="@+id/editPassword"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/form_edit_background"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            android:hint="Password"
+            android:paddingLeft="20dp"
+            android:textSize="22sp"
+            android:inputType="textPassword"
+            />
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/loginbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:padding="15dp"
+            android:layout_marginTop="50dp"
+            android:text="Login"
+            app:cornerRadius="10dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/button_color"
+
+            android:layout_marginBottom="100dp"
+            />
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

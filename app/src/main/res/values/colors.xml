@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="base_color">#146C6C</color>
+    <color name="bg_color">#F0F6FA</color>
+    <color name="button_color">#329393</color>
+    <color name="form_edit_bg_color">#DFE6EF</color>
+
+
+
+
+
+
+</resources>
