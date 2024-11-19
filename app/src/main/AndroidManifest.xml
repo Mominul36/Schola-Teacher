@@ -13,28 +13,35 @@
         android:theme="@style/Theme.ScholaTeacher"
         tools:targetApi="31">
         <activity
+            android:name=".LabCourseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TheoryCourseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CourseListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddCourseActivity"
+            android:exported="true" />
+        <activity
             android:name=".StudentProfileActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
-
-        </activity>
-        <activity
-            android:name=".AdvHomeActivity"
-            android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
         <activity
+            android:name=".AdvHomeActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -1,14 +1,2886 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.AdvScheduleFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.AdvScheduleFragment"
+    android:orientation="vertical"
+    android:background="@color/bg_color">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--Main Frame-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginHorizontal="20dp"
+                        >
+
+                        <TextView
+                            android:background="@drawable/textview_background"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:paddingVertical="10dp"
+
+                            android:text="."
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:background="@drawable/textview_background"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:paddingVertical="10dp"
+
+
+                            android:text="8.00 - 8.50"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:background="@drawable/textview_background"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:paddingVertical="10dp"
+                            android:text="9.00 - 9.50"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:background="@drawable/textview_background"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:paddingVertical="10dp"
+                            android:text="10.00 - 10.50"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:background="@drawable/textview_background"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:paddingVertical="10dp"
+                            android:text="11.30 - 12.20"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:background="@drawable/textview_background"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:paddingVertical="10dp"
+                            android:text="12.30 - 1.20"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:background="@drawable/textview_background"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:paddingVertical="10dp"
+                            android:text="1.30 - 2.20"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:background="@drawable/textview_background"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:paddingVertical="10dp"
+                            android:text="2.30 - 3.20"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:background="@drawable/textview_background"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:paddingVertical="10dp"
+                            android:text="3.30 - 4.20"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:background="@drawable/textview_background"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:paddingVertical="10dp"
+                            android:text="4.30 - 5.20"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            />
+
+
+
+
+
+
+
+                    </LinearLayout>
+
+                    <!--  SUNDAY-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:background="@drawable/textview_background"
+                        >
+
+                        <TextView
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:paddingVertical="10dp"
+
+                            android:text="SUNDAY"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:background="@drawable/textview_background"
+                       android:orientation="vertical"
+
+                        >
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginHorizontal="5dp"
+                            >
+                            <Spinner
+                                android:id="@+id/sunc1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:background="@color/bg_color"
+                                />
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginHorizontal="5dp"
+
+                            >
+                            <Spinner
+                                android:id="@+id/sunr1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:background="@color/bg_color"
+                                />
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:background="@drawable/textview_background"
+                        android:orientation="vertical"
+
+                        >
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginHorizontal="5dp"
+                            >
+                            <Spinner
+                                android:id="@+id/sunc2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:background="@color/bg_color"
+                                />
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginHorizontal="5dp"
+
+                            >
+                            <Spinner
+                                android:id="@+id/sunr2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:background="@color/bg_color"
+                                />
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:background="@drawable/textview_background"
+                        android:orientation="vertical"
+
+                        >
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginHorizontal="5dp"
+                            >
+                            <Spinner
+                                android:id="@+id/sunc3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:background="@color/bg_color"
+                                />
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginHorizontal="5dp"
+
+                            >
+                            <Spinner
+                                android:id="@+id/sunr3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:background="@color/bg_color"
+                                />
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:background="@drawable/textview_background"
+                        android:orientation="vertical"
+
+                        >
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginHorizontal="5dp"
+                            >
+                            <Spinner
+                                android:id="@+id/sunc4"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:background="@color/bg_color"
+                                />
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginHorizontal="5dp"
+
+                            >
+                            <Spinner
+                                android:id="@+id/sunr4"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:background="@color/bg_color"
+                                />
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:background="@drawable/textview_background"
+                        android:orientation="vertical"
+
+                        >
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginHorizontal="5dp"
+                            >
+                            <Spinner
+                                android:id="@+id/sunc5"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:background="@color/bg_color"
+                                />
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginHorizontal="5dp"
+
+                            >
+                            <Spinner
+                                android:id="@+id/sunr5"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:background="@color/bg_color"
+                                />
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:background="@drawable/textview_background"
+                        android:orientation="vertical"
+
+                        >
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginHorizontal="5dp"
+                            >
+                            <Spinner
+                                android:id="@+id/sunc6"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:background="@color/bg_color"
+                                />
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginHorizontal="5dp"
+
+                            >
+                            <Spinner
+                                android:id="@+id/sunr6"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:background="@color/bg_color"
+                                />
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:background="@drawable/textview_background"
+                        android:orientation="vertical"
+
+                        >
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginHorizontal="5dp"
+                            >
+                            <Spinner
+                                android:id="@+id/sunc7"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:background="@color/bg_color"
+                                />
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginHorizontal="5dp"
+
+                            >
+                            <Spinner
+                                android:id="@+id/sunr7"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:background="@color/bg_color"
+                                />
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:background="@drawable/textview_background"
+                        android:orientation="vertical"
+
+                        >
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginHorizontal="5dp"
+                            >
+                            <Spinner
+                                android:id="@+id/sunc8"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:background="@color/bg_color"
+                                />
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginHorizontal="5dp"
+
+                            >
+                            <Spinner
+                                android:id="@+id/sunr8"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:background="@color/bg_color"
+                                />
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:background="@drawable/textview_background"
+                        android:orientation="vertical"
+
+                        >
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginHorizontal="5dp"
+                            >
+                            <Spinner
+                                android:id="@+id/sunc9"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:background="@color/bg_color"
+                                />
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginHorizontal="5dp"
+
+                            >
+                            <Spinner
+                                android:id="@+id/sunr9"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:background="@color/bg_color"
+                                />
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                    <!--  MONDAY-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            >
+
+                            <TextView
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+
+                                android:text="MONDAY"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/monc1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/monr1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/monc2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/monr2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/monc3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/monr3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/monc4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/monr4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/monc5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/monr5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/monc6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/monr6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/monc7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/monr7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/monc8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/monr8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/monc9"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/monr9"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+
+
+
+
+                    </LinearLayout>
+
+                    <!--  TUESDAY-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            >
+
+                            <TextView
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+
+                                android:text="TUESDAY"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/tuec1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/tuer1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/tuec2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/tuer2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/tuec3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/tuer3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/tuec4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/tuer4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/tuec5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/tuer5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/tuec6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/tuer6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/tuec7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/tuer7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/tuec8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/tuer8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/tuec9"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/tuer9"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+
+
+
+
+
+                    </LinearLayout>
+
+
+                    <!--  WEDNESDAY-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            >
+
+                            <TextView
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+
+                                android:text="WEDNESDAY"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/wedc1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/wedr1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/wedc2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/wedr2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/wedc3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/wedr3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/wedc4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/wedr4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/wedc5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/wedr5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/wedc6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/wedr6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/wedc7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/wedr7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/wedc8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/wedr8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/wedc9"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/wedr9"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+
+
+
+
+                    </LinearLayout>
+
+
+
+                    <!--  THURSDAY-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            >
+
+                            <TextView
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:textAlignment="center"
+                                android:paddingVertical="10dp"
+
+                                android:text="THURSDAY"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/thuc1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/thur1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/thuc2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/thur2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/thuc3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/thur3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/thuc4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/thur4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/thuc5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/thur5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/thuc6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/thur6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/thuc7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/thur7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/thuc8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/thur8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:gravity="center"
+                            android:background="@drawable/textview_background"
+                            android:orientation="vertical"
+
+                            >
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginHorizontal="5dp"
+                                >
+                                <Spinner
+                                    android:id="@+id/thuc9"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginHorizontal="5dp"
+
+                                >
+                                <Spinner
+                                    android:id="@+id/thur9"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAlignment="center"
+                                    android:paddingVertical="10dp"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:background="@color/bg_color"
+                                    />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        >
+
+
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/addbtn"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:padding="15dp"
+                            android:layout_marginTop="30dp"
+                            android:text="Submit"
+                            android:textColor="@color/white"
+                            android:background="@drawable/button_background"
+
+                            />
+
+
+
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/updatebtn"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:padding="15dp"
+                            android:layout_marginTop="30dp"
+                            android:text="Update"
+                            android:textColor="@color/white"
+                            android:layout_marginBottom="100dp"
+                            android:background="@drawable/button_background"
+                            />
+
+
+
+
+
+
+
+                    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+                </LinearLayout>
+
+
+            </HorizontalScrollView>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+</LinearLayout>
