@@ -44,10 +44,12 @@ class CourseAdapter(
 
             if(course.type=="Theory"){
                 var intent = Intent(context,TheoryCourseActivity::class.java)
+                intent.putExtra("initialFragmentPosition",0)
                 intent.putExtra("assignCourseId",course.assigncourseId)
                 context.startActivity(intent)
             }else{
                 var intent = Intent(context,LabCourseActivity::class.java)
+                intent.putExtra("initialFragmentPosition",0)
                 intent.putExtra("assignCourseId",course.assigncourseId)
                 context.startActivity(intent)
             }

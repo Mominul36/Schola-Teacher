@@ -1,60 +1,81 @@
 package com.example.scholateacher.Fragments.Lab
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.scholateacher.Adapters.AssignmentAdapter
+import com.example.scholateacher.Adapters.ClassTestAdapter
+import com.example.scholateacher.Adapters.LabReportAdapter
+import com.example.scholateacher.AddAssignmentActivity
+import com.example.scholateacher.AddClassTestActivity
+import com.example.scholateacher.AddLabReportActivity
+import com.example.scholateacher.Model.Assignment
+import com.example.scholateacher.Model.ClassTest
+import com.example.scholateacher.Model.LabReport
 import com.example.scholateacher.R
+import com.example.scholateacher.databinding.FragmentLLabReportBinding
+import com.example.scholateacher.databinding.FragmentTAssignmentBinding
+import com.example.scholateacher.databinding.FragmentTClassTestBinding
+import com.google.firebase.database.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [LLabReportFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class LLabReportFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    lateinit var binding: FragmentLLabReportBinding
+    lateinit var labReportAdapter: LabReportAdapter
+    lateinit var labReportList: MutableList<LabReport>
+    private lateinit var databaseReference: DatabaseReference
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_l_lab_report, container, false)
+        binding = FragmentLLabReportBinding.inflate(inflater, container, false)
+
+        val assignCourseId = arguments?.getString("assignCourseId") ?: ""
+
+        binding.recyclerView.layoutManager = LinearLayoutManager(context)
+        labReportList = mutableListOf()
+        labReportAdapter = LabReportAdapter(requireContext(), labReportList)
+        binding.recyclerView.adapter = labReportAdapter
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("LabReport")
+
+        fetchLabReport(assignCourseId)
+
+        binding.fab.setOnClickListener {
+            val intent = Intent(requireContext(), AddLabReportActivity::class.java)
+            intent.putExtra("assignCourseId", assignCourseId)
+            startActivity(intent)
+        }
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment LLabReportFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            LLabReportFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+
+    private fun fetchLabReport(assignCourseId: String) {
+
+        databaseReference.orderByChild("assignCourseId").equalTo(assignCourseId).addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                labReportList.clear()
+                if (snapshot.exists()) {
+                    for (dataSnapshot in snapshot.children) {
+                        val labReport = dataSnapshot.getValue(LabReport::class.java)
+                        labReport?.let { labReportList.add(it) }
+                    }
+                    labReportAdapter.notifyDataSetChanged()
+                } else {
+                    //Toast.makeText(requireContext(), "No class tests found.", Toast.LENGTH_SHORT).show()
                 }
             }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(requireContext(), "Error fetching data: ${error.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 }

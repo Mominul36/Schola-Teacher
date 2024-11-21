@@ -27,6 +27,7 @@ class LoginActivity : AppCompatActivity() {
 
         if(user!=null){
             startActivity(Intent(this,MainActivity::class.java))
+            finish()
         }
 
 
@@ -63,6 +64,7 @@ class LoginActivity : AppCompatActivity() {
          .addOnSuccessListener {
              Toast.makeText(this,"Login Successfull",Toast.LENGTH_SHORT).show()
              startActivity(Intent(this,MainActivity::class.java))
+             finish()
 
          }
          .addOnFailureListener{ error->

@@ -22,19 +22,22 @@ class LabCourseActivity : AppCompatActivity() {
 
 
 
+        val assignCourseId = intent.getStringExtra("assignCourseId").toString()
+        val initialFragmentPosition:Int =intent.getIntExtra("initialFragmentPosition",0)
+
 
         // Set up ViewPager2 adapter
-        val adapter = LabCoursePagerAdapter(this)
+        val adapter = LabCoursePagerAdapter(this,assignCourseId)
         binding.viewPager.adapter = adapter
 
         // Link TabLayout with ViewPager2
-        val tabTitles = listOf("Announcement", "Lab Report","Lab Exam","Result")
+        val tabTitles = listOf("Announcement","Attendence", "Lab Report","Lab Exam","Result")
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             tab.text = tabTitles[position]
         }.attach()
 
 
-
+         binding.viewPager.setCurrentItem(initialFragmentPosition, false)
 
 
     }

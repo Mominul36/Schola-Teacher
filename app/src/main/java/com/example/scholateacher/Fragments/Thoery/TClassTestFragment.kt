@@ -1,60 +1,73 @@
 package com.example.scholateacher.Fragments.Thoery
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.scholateacher.Adapters.ClassTestAdapter
+import com.example.scholateacher.AddClassTestActivity
+import com.example.scholateacher.Model.ClassTest
 import com.example.scholateacher.R
+import com.example.scholateacher.databinding.FragmentTClassTestBinding
+import com.google.firebase.database.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [TClassTestFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class TClassTestFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    lateinit var binding: FragmentTClassTestBinding
+    lateinit var classTestAdapter: ClassTestAdapter
+    lateinit var classTestList: MutableList<ClassTest>
+    private lateinit var databaseReference: DatabaseReference
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_t_class_test, container, false)
+        binding = FragmentTClassTestBinding.inflate(inflater, container, false)
+
+        val assignCourseId = arguments?.getString("assignCourseId") ?: ""
+
+        binding.recyclerView.layoutManager = LinearLayoutManager(context)
+        classTestList = mutableListOf()
+        classTestAdapter = ClassTestAdapter(requireContext(), classTestList)
+        binding.recyclerView.adapter = classTestAdapter
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("ClassTest")
+
+        fetchClassTests(assignCourseId)
+
+        binding.fab.setOnClickListener {
+            val intent = Intent(requireContext(), AddClassTestActivity::class.java)
+            intent.putExtra("assignCourseId", assignCourseId)
+            startActivity(intent)
+        }
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment TClassTestFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            TClassTestFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+
+    private fun fetchClassTests(assignCourseId: String) {
+
+        databaseReference.orderByChild("assignCourseId").equalTo(assignCourseId).addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                classTestList.clear()
+                if (snapshot.exists()) {
+                    for (dataSnapshot in snapshot.children) {
+                        val classTest = dataSnapshot.getValue(ClassTest::class.java)
+                        classTest?.let { classTestList.add(it) }
+                    }
+                    classTestAdapter.notifyDataSetChanged()
+                } else {
+                    Toast.makeText(requireContext(), "No class tests found.", Toast.LENGTH_SHORT).show()
                 }
             }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(requireContext(), "Error fetching data: ${error.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 }

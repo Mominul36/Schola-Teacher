@@ -1,34 +1,48 @@
 package com.example.scholateacher.Adapters
 
+import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.scholateacher.Fragments.Lab.LAnnouncementFragment
+import com.example.scholateacher.Fragments.Lab.LAttendenceFragment
 import com.example.scholateacher.Fragments.Lab.LLabExamFragment
 import com.example.scholateacher.Fragments.Lab.LLabReportFragment
 import com.example.scholateacher.Fragments.Lab.LResultFragment
-import com.example.scholateacher.Fragments.StudentFragment
-import com.example.scholateacher.Fragments.StudentRequestFragment
-import com.example.scholateacher.Fragments.Thoery.TAnnouncementFragment
-import com.example.scholateacher.Fragments.Thoery.TAssignmentFragment
-import com.example.scholateacher.Fragments.Thoery.TAttendenceFragment
-import com.example.scholateacher.Fragments.Thoery.TClassTestFragment
-import com.example.scholateacher.Fragments.Thoery.TResultFragment
 
 
-class LabCoursePagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
+
+class LabCoursePagerAdapter(
+    fragmentActivity: FragmentActivity,
+    private val assignCourseId: String
+) : FragmentStateAdapter(fragmentActivity) {
 
     override fun getItemCount(): Int {
-        return 4 // Number of tabs
+        return 5 // Number of tabs
     }
 
     override fun createFragment(position: Int): Fragment {
-        return when (position) {
-            0 -> LAnnouncementFragment() // First tab
-            1 -> LLabReportFragment()
-            2 -> LLabExamFragment()
-            3 -> LResultFragment()
+        val fragment= when (position) {
+            0 -> LAnnouncementFragment()
+            1 -> LAttendenceFragment()
+            2 -> LLabReportFragment()
+            3 -> LLabExamFragment()
+            4 -> LResultFragment()
             else -> throw IllegalStateException("Invalid position: $position")
         }
+
+        // Attach data to the fragment via arguments
+        fragment.arguments = Bundle().apply {
+            putString("assignCourseId", assignCourseId) // Add any key-value pairs
+        }
+
+        return fragment
+
+
+
     }
+
+
+
+
 }
