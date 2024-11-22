@@ -11,6 +11,27 @@ import com.google.firebase.database.ValueEventListener
 class MyClass {
 
     private lateinit var auth: FirebaseAuth
+    private val dates = mutableListOf<String>()
+    private val classes = mutableListOf<String>()
+
+
+    fun getClassAndDate(index: Int): Pair<String, String> {
+
+        for (i in 1..42) {
+            dates.add("date$i")
+            classes.add("class$i")
+        }
+
+        if (index < 1 || index > dates.size) {
+            throw IllegalArgumentException("Index out of range. Must be between 1 and 42.")
+        }
+
+        return Pair(classes[index - 1], dates[index - 1])
+    }
+
+
+
+
 
     // Get the current logged-in teacher
     fun getCurrentTeacher(onComplete: (Teacher?) -> Unit) {

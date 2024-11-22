@@ -8,7 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.scholateacher.Class.MyClass
 import com.example.scholateacher.Model.AssignCourse
 import com.example.scholateacher.Model.Course
+import com.example.scholateacher.Model.Student
 import com.example.scholateacher.Model.Teacher
+import com.example.scholateacher.Model.TheoryAttendance
 import com.example.scholateacher.databinding.ActivityAddCourseBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -139,13 +141,58 @@ class AddCourseActivity : AppCompatActivity() {
                                 section_id = section.id,
                                 course_id = course,
                                 teacher_id = teacherId, // Use teacher ID
-                                credit = credit
+                                credit = credit,
+                                total_class = 0, // Initialize total_class to 0
+                                date1 = "",
+                                date2 = "",
+                                date3 = "",
+                                date4 = "",
+                                date5 = "",
+                                date6 = "",
+                                date7 = "",
+                                date8 = "",
+                                date9 = "",
+                                date10 = "",
+                                date11 = "",
+                                date12 = "",
+                                date13 = "",
+                                date14 = "",
+                                date15 = "",
+                                date16 = "",
+                                date17 = "",
+                                date18 = "",
+                                date19 = "",
+                                date20 = "",
+                                date21 = "",
+                                date22 = "",
+                                date23 = "",
+                                date24 = "",
+                                date25 = "",
+                                date26 = "",
+                                date27 = "",
+                                date28 = "",
+                                date29 = "",
+                                date30 = "",
+                                date31 = "",
+                                date32 = "",
+                                date33 = "",
+                                date34 = "",
+                                date35 = "",
+                                date36 = "",
+                                date37 = "",
+                                date38 = "",
+                                date39 = "",
+                                date40 = "",
+                                date41 = "",
+                                date42 = ""
                             )
+
 
                             assignCourse.id?.let { id ->
                                 database.child(id).setValue(assignCourse)
                                     .addOnSuccessListener {
                                         Toast.makeText(this@AddCourseActivity, "Course assigned successfully", Toast.LENGTH_SHORT).show()
+                                        createAttendanceForSectionStudents(section.id!!, id)
                                         finish()
                                     }
                                     .addOnFailureListener { e ->
@@ -164,5 +211,98 @@ class AddCourseActivity : AppCompatActivity() {
             }
         }
     }
+
+
+    private fun createAttendanceForSectionStudents(sectionId: String, assignCourseId: String) {
+        val studentDatabase = FirebaseDatabase.getInstance().getReference("Student")
+        val attendanceDatabase = FirebaseDatabase.getInstance().getReference("TheoryAttendance")
+
+        // Fetch students of the given section
+        studentDatabase.orderByChild("sectionId").equalTo(sectionId).addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+                    for (studentSnapshot in snapshot.children) {
+                        val student = studentSnapshot.getValue(Student::class.java)
+
+                        student?.let {
+
+                            if(student.isverify==true){
+                                // Create attendance record for each student with class1 to class42 set to 0
+                                val attendance = TheoryAttendance(
+                                    id = attendanceDatabase.push().key,
+                                    assignCourseId = assignCourseId,
+                                    studentId = it.id,
+                                    class1 = "0",
+                                    class2 = "0",
+                                    class3 = "0",
+                                    class4 = "0",
+                                    class5 = "0",
+                                    class6 = "0",
+                                    class7 = "0",
+                                    class8 = "0",
+                                    class9 = "0",
+                                    class10 = "0",
+                                    class11 = "0",
+                                    class12 = "0",
+                                    class13 = "0",
+                                    class14 = "0",
+                                    class15 = "0",
+                                    class16 = "0",
+                                    class17 = "0",
+                                    class18 = "0",
+                                    class19 = "0",
+                                    class20 = "0",
+                                    class21 = "0",
+                                    class22 = "0",
+                                    class23 = "0",
+                                    class24 = "0",
+                                    class25 = "0",
+                                    class26 = "0",
+                                    class27 = "0",
+                                    class28 = "0",
+                                    class29 = "0",
+                                    class30 = "0",
+                                    class31 = "0",
+                                    class32 = "0",
+                                    class33 = "0",
+                                    class34 = "0",
+                                    class35 = "0",
+                                    class36 = "0",
+                                    class37 = "0",
+                                    class38 = "0",
+                                    class39 = "0",
+                                    class40 = "0",
+                                    class41 = "0",
+                                    class42 = "0"
+                                )
+
+                                // Save attendance record to Firebase
+                                attendance.id?.let { id ->
+                                    attendanceDatabase.child(id).setValue(attendance)
+                                        .addOnSuccessListener {
+                                            // Optional: Log success if needed
+                                        }
+                                        .addOnFailureListener { e ->
+                                            Toast.makeText(this@AddCourseActivity, "Failed to create attendance: ${e.message}", Toast.LENGTH_SHORT).show()
+                                        }
+                                }
+                            }
+
+
+                        }
+                    }
+                } else {
+                    Toast.makeText(this@AddCourseActivity, "No students found in this section", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(this@AddCourseActivity, "Error fetching students: ${error.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
+
+
 
 }

@@ -4,11 +4,9 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.scholateacher.Fragments.StudentFragment
-import com.example.scholateacher.Fragments.StudentRequestFragment
 import com.example.scholateacher.Fragments.Thoery.TAnnouncementFragment
 import com.example.scholateacher.Fragments.Thoery.TAssignmentFragment
-import com.example.scholateacher.Fragments.Thoery.TAttendenceFragment
+import com.example.scholateacher.Fragments.Thoery.TAttendanceFragment
 import com.example.scholateacher.Fragments.Thoery.TClassTestFragment
 import com.example.scholateacher.Fragments.Thoery.TResultFragment
 
@@ -26,7 +24,7 @@ class ThoeryCoursePagerAdapter(
     override fun createFragment(position: Int): Fragment {
         val fragment = when (position) {
             0 -> TAnnouncementFragment()
-            1 -> TAttendenceFragment()
+            1 -> TAttendanceFragment()
             2 -> TClassTestFragment()
             3 -> TAssignmentFragment()
             4 -> TResultFragment()

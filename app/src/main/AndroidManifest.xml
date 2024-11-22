@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ScholaTeacher"
         tools:targetApi="31">
         <activity
+            android:name=".TakeAttendanceActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddLabReportActivity"
             android:exported="false" />
         <activity
