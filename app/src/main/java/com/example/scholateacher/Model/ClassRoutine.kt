@@ -1,7 +1,6 @@
 package com.example.scholateacher.Model
 
 class ClassRoutine(
-    var id: String?=null,
     var section_id: String?=null,
     var day: String?=null,
     var course1: String?=null,
@@ -22,23 +21,5 @@ class ClassRoutine(
     var room7: String?=null,
     var room8: String?=null,
     var room9: String?=null,
-    var teacher_name1: String?=null,
-    var teacher_name2: String?=null,
-    var teacher_name3: String?=null,
-    var teacher_name4: String?=null,
-    var teacher_name5: String?=null,
-    var teacher_name6: String?=null,
-    var teacher_name7: String?=null,
-    var teacher_name8: String?=null,
-    var teacher_name9: String?=null,
-    var pic1: String?=null,
-    var pic2: String?=null,
-    var pic3: String?=null,
-    var pic4: String?=null,
-    var pic5: String?=null,
-    var pic6: String?=null,
-    var pic7: String?=null,
-    var pic8: String?=null,
-    var pic9: String?=null
     ) {
 }
