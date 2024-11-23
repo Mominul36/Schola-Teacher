@@ -31,7 +31,7 @@ class LabCourseActivity : AppCompatActivity() {
         binding.viewPager.adapter = adapter
 
         // Link TabLayout with ViewPager2
-        val tabTitles = listOf("Announcement","Attendence", "Lab Report","Lab Exam","Result")
+        val tabTitles = listOf("Announcement","Attendence", "Lab Report","Lab Exam","Study Material")
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             tab.text = tabTitles[position]
         }.attach()

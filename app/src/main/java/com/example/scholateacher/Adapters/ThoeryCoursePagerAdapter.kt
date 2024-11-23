@@ -9,7 +9,7 @@ import com.example.scholateacher.Fragments.Thoery.TAssignmentFragment
 import com.example.scholateacher.Fragments.Thoery.TAttendanceFragment
 import com.example.scholateacher.Fragments.Thoery.TClassTestFragment
 import com.example.scholateacher.Fragments.Thoery.TResultFragment
-
+import com.example.scholateacher.Fragments.Thoery.TStudyMaterialFragment
 
 
 class ThoeryCoursePagerAdapter(
@@ -27,7 +27,7 @@ class ThoeryCoursePagerAdapter(
             1 -> TAttendanceFragment()
             2 -> TClassTestFragment()
             3 -> TAssignmentFragment()
-            4 -> TResultFragment()
+            4 -> TStudyMaterialFragment()
             else -> throw IllegalStateException("Invalid position: $position")
         }
 

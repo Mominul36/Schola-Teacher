@@ -1,12 +1,8 @@
 package com.example.scholateacher
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.example.scholateacher.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 import android.view.MenuItem
 import android.view.View
@@ -23,10 +19,6 @@ import com.example.scholateacher.Fragments.AdvHomeFragment
 import com.example.scholateacher.Fragments.AdvScheduleFragment
 import com.example.scholateacher.Fragments.AdvStudentFragment
 import com.example.scholateacher.Fragments.HomeFragment
-import com.example.scholateacher.Fragments.MessageFragment
-import com.example.scholateacher.Fragments.ProfileFragment
-import com.example.scholateacher.Fragments.TimeTableFragment
-import com.example.scholateacher.Model.Teacher
 import com.example.scholateacher.databinding.ActivityAdvHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 

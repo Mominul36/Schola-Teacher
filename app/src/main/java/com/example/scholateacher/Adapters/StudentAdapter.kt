@@ -10,7 +10,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.scholateacher.Class.ControlImage
 import com.example.scholateacher.Model.Student
-import com.example.scholateacher.Model.Teacher
 import com.example.scholateacher.R
 import com.example.scholateacher.StudentProfileActivity
 

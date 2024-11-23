@@ -9,7 +9,7 @@ import com.example.scholateacher.Fragments.Lab.LAttendenceFragment
 import com.example.scholateacher.Fragments.Lab.LLabExamFragment
 import com.example.scholateacher.Fragments.Lab.LLabReportFragment
 import com.example.scholateacher.Fragments.Lab.LResultFragment
-
+import com.example.scholateacher.Fragments.Lab.LStudyMaterialFragment
 
 
 class LabCoursePagerAdapter(
@@ -27,7 +27,7 @@ class LabCoursePagerAdapter(
             1 -> LAttendenceFragment()
             2 -> LLabReportFragment()
             3 -> LLabExamFragment()
-            4 -> LResultFragment()
+            4 -> LStudyMaterialFragment()
             else -> throw IllegalStateException("Invalid position: $position")
         }
 

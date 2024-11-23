@@ -23,7 +23,7 @@ class TheoryCourseActivity : AppCompatActivity() {
         val adapter = ThoeryCoursePagerAdapter(this, assignCourseId)
         binding.viewPager.adapter = adapter
 
-        val tabTitles = listOf("Announcement", "Attendance", "Class Test", "Assignment", "Result")
+        val tabTitles = listOf("Announcement", "Attendance", "Class Test", "Assignment", "Study Material")
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             tab.text = tabTitles[position]
         }.attach()

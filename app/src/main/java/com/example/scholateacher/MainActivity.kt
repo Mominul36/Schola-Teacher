@@ -2,7 +2,6 @@ package com.example.scholateacher
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.scholateacher.databinding.ActivityMainBinding
@@ -11,7 +10,6 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -22,7 +20,6 @@ import com.example.scholateacher.Fragments.HomeFragment
 import com.example.scholateacher.Fragments.MessageFragment
 import com.example.scholateacher.Fragments.ProfileFragment
 import com.example.scholateacher.Fragments.TimeTableFragment
-import com.example.scholateacher.Model.Teacher
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 

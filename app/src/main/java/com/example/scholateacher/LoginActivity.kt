@@ -2,11 +2,14 @@ package com.example.scholateacher
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.scholateacher.Model.Student
+import com.example.scholateacher.Model.Teacher
 import com.example.scholateacher.Model.TheoryAttendance
+import com.example.scholateacher.Model.User
 import com.example.scholateacher.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -54,6 +57,8 @@ class LoginActivity : AppCompatActivity() {
 
         }
 
+        //setAllUser()
+
 
 
 
@@ -73,6 +78,58 @@ class LoginActivity : AppCompatActivity() {
 
 
     }
+
+    private fun setAllUser() {
+        val database = FirebaseDatabase.getInstance()
+        val studentRef = database.getReference("Student")
+        val teacherRef = database.getReference("Teacher")
+        val userRef = database.getReference("User")
+
+        // Fetch all students
+        studentRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (studentSnapshot in snapshot.children) {
+                    val student = studentSnapshot.getValue(Student::class.java)
+                    student?.let {
+                        val user = User(
+                            id = it.id,
+                            Name = it.name,
+                            pic = it.profilePic,
+                            type = "Student"
+                        )
+                        userRef.child(it.id!!).setValue(user)
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.e("setAllUser", "Error fetching students: ${error.message}")
+            }
+        })
+
+        // Fetch all teachers
+        teacherRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (teacherSnapshot in snapshot.children) {
+                    val teacher = teacherSnapshot.getValue(Teacher::class.java)
+                    teacher?.let {
+                        val user = User(
+                            id = it.id,
+                            Name = it.name,
+                            pic = it.profilePic,
+                            type = "Teacher"
+                        )
+                        userRef.child(it.id!!).setValue(user)
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.e("setAllUser", "Error fetching teachers: ${error.message}")
+            }
+        })
+    }
+
 
     private fun signIn(email: String, pass: String) {
      auth.signInWithEmailAndPassword(email,pass)
