@@ -114,6 +114,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 controlImage.setImageByURl(teacher.profilePic.toString(),binding.profilePic)
                 controlImage.setImageByURl(teacher.profilePic.toString(),largeProfilePic)
 
+
+                name.text = teacher.name
+                designation.text = teacher.des
+
+
+
             } else {
             }
         }
@@ -135,12 +141,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when (item.itemId) {
             R.id.nav_faculty_members -> {
 
+                startActivity(Intent(this,FacultyActivity::class.java))
 
 
 
-
-                // Handle Home click
-                //supportFragmentManager.beginTransaction().replace(R.id.content_frame, HomeFragment()).commit()
             }
             R.id.nav_advising_batch -> {
 
@@ -152,19 +156,28 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 //supportFragmentManager.beginTransaction().replace(R.id.content_frame, ProfileFragment()).commit()
             }
             R.id.nav_academic_calendar -> {
-                // Handle Settings click
-                //supportFragmentManager.beginTransaction().replace(R.id.content_frame, SettingsFragment()).commit()
+                startActivity(Intent(this,AcademicCalendarActivity::class.java))
+
             }
             R.id.nav_cgpa_calculator -> {
-                // Handle Settings click
-               // supportFragmentManager.beginTransaction().replace(R.id.content_frame, SettingsFragment()).commit()
+
+            }
+            R.id.nav_question_bank -> {
+                startActivity(Intent(this,QuestionActivity::class.java))
+
+
+            }
+            R.id.nav_notice -> {
+                startActivity(Intent(this,NoticeActivity::class.java))
+
+
             }
             R.id.nav_settings -> {
-                // Handle Settings click
-                //supportFragmentManager.beginTransaction().replace(R.id.content_frame, SettingsFragment()).commit()
+
+
             }
             R.id.nav_logout -> {
-               auth.signOut()
+                auth.signOut()
                 startActivity(Intent(this,LoginActivity::class.java))
                 finish()
             }
@@ -189,5 +202,4 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
 }
-
 

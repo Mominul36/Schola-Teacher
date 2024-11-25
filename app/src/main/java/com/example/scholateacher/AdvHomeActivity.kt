@@ -111,6 +111,9 @@ class AdvHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
                 controlImage.setImageByURl(teacher.profilePic.toString(),binding.profilePic)
                 controlImage.setImageByURl(teacher.profilePic.toString(),largeProfilePic)
 
+
+                name.text = teacher.name
+                designation.text = teacher.des
             } else {
             }
         }

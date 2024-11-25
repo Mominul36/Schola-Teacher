@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebViewClient
 import android.widget.Toast
 import com.example.scholateacher.Class.ControlImage
 import com.example.scholateacher.CourseListActivity
@@ -32,11 +33,11 @@ class HomeFragment : Fragment() {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-       binding.seeAll.setOnClickListener{
-           startActivity(Intent(requireContext(),CourseListActivity::class.java))
 
-       }
 
+    binding.see.setOnClickListener{
+        startActivity(Intent(requireContext(),CourseListActivity::class.java))
+    }
 
 
 

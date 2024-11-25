@@ -30,5 +30,16 @@ class TheoryCourseActivity : AppCompatActivity() {
 
 
         binding.viewPager.setCurrentItem(initialFragmentPosition, false)
+
+
+
+
+
+        binding.back.setOnClickListener{
+            finish()
+        }
+
+
+
     }
 }

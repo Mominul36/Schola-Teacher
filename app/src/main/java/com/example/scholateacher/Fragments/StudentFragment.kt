@@ -76,7 +76,7 @@ class StudentFragment : Fragment() {
                         val student = dataSnapshot.getValue(Student::class.java)
 
                         // Check if the student is verified
-                        if (student?.isverify == false) {
+                        if (student?.isverify == true) {
                             studentsList.add(student)
                         }
                     }

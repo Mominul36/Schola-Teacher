@@ -5,14 +5,14 @@
         android:title="Home" />
     <item
         android:id="@+id/nav_student"
-        android:icon="@drawable/time_table"
+        android:icon="@drawable/ic_student_request"
         android:title="Student" />
     <item
         android:id="@+id/nav_course"
-        android:icon="@drawable/message"
+        android:icon="@drawable/ic_course"
         android:title="Course" />
     <item
         android:id="@+id/nav_schedule"
-        android:icon="@drawable/profile"
+        android:icon="@drawable/ic_academic_calendar"
         android:title="Schedule" />
 </menu>

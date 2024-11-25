@@ -1,59 +1,74 @@
 package com.example.scholateacher.Fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.scholateacher.R
+import com.example.scholateacher.Model.Teacher
+import com.example.scholateacher.databinding.FragmentTimeTableBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
+import com.google.firebase.database.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [TimeTableFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class TimeTableFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentTimeTableBinding
+    private lateinit var auth: FirebaseAuth
+    private lateinit var database: DatabaseReference
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_time_table, container, false)
+    ): View {
+        binding = FragmentTimeTableBinding.inflate(inflater, container, false)
+        auth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance().getReference("Teacher")
+
+        // Fetch and process all Teacher objects
+        fetchAndCreateAuthUsers()
+
+
+
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment TimeTableFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            TimeTableFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private fun fetchAndCreateAuthUsers() {
+        database.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+                    for (teacherSnapshot in snapshot.children) {
+                        val teacher = teacherSnapshot.getValue(Teacher::class.java)
+                        if (teacher != null && !teacher.id.isNullOrEmpty() && !teacher.password.isNullOrEmpty()) {
+                            val email = "${teacher.id}@gmail.com"
+                            val password = teacher.password.toString()
+                            createFirebaseUser(email, password)
+                        }
+                    }
+                } else {
+                    Log.e("TimeTableFragment", "No teachers found in the database.")
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.e("TimeTableFragment", "Database error: ${error.message}")
+            }
+        })
+    }
+
+    private fun createFirebaseUser(email: String, password: String) {
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Log.d("TimeTableFragment", "User created: $email")
+                } else {
+                    if (task.exception is FirebaseAuthUserCollisionException) {
+                        Log.w("TimeTableFragment", "User already exists: $email")
+                    } else {
+                        Log.e("TimeTableFragment", "Error creating user: ${task.exception?.message}")
+                    }
                 }
             }
     }

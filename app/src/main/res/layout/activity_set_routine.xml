@@ -1,40 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragments.AdvScheduleFragment"
-    android:orientation="vertical"
-    android:background="@color/bg_color">
+    tools:context=".SetRoutineActivity">
 
 
 
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/setbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"
-        android:text="Set Routine"
-        app:cornerRadius="4dp"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/button_color"
-        android:paddingHorizontal="20dp"
-        android:paddingVertical="5dp"
-        />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="?attr/colorPrimary">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp">
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/back_arrow"
+                android:layout_marginTop="5dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set Routine"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
 
 
 
 
     <ScrollView
-        android:id="@+id/showRoutine"
+        android:id="@+id/setRoutine"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
+        android:layout_below="@id/toolbar"
         >
 
         <LinearLayout
@@ -51,12 +70,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
-
-
-
-
-
-
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -237,14 +250,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vsunc1"
+                                <Spinner
+                                    android:id="@+id/sunc1"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
-                                    android:text=""
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -261,13 +273,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vsunr1"
+                                <Spinner
+                                    android:id="@+id/sunr1"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -293,13 +305,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vsunc2"
+                                <Spinner
+                                    android:id="@+id/sunc2"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -316,13 +328,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vsunr2"
+                                <Spinner
+                                    android:id="@+id/sunr2"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -348,13 +360,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vsunc3"
+                                <Spinner
+                                    android:id="@+id/sunc3"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -371,13 +383,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vsunr3"
+                                <Spinner
+                                    android:id="@+id/sunr3"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -403,13 +415,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vsunc4"
+                                <Spinner
+                                    android:id="@+id/sunc4"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -426,13 +438,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vsunr4"
+                                <Spinner
+                                    android:id="@+id/sunr4"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -458,13 +470,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vsunc5"
+                                <Spinner
+                                    android:id="@+id/sunc5"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -481,13 +493,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vsunr5"
+                                <Spinner
+                                    android:id="@+id/sunr5"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -513,13 +525,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vsunc6"
+                                <Spinner
+                                    android:id="@+id/sunc6"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -536,13 +548,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vsunr6"
+                                <Spinner
+                                    android:id="@+id/sunr6"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -568,13 +580,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vsunc7"
+                                <Spinner
+                                    android:id="@+id/sunc7"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -591,13 +603,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vsunr7"
+                                <Spinner
+                                    android:id="@+id/sunr7"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -623,13 +635,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vsunc8"
+                                <Spinner
+                                    android:id="@+id/sunc8"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -646,13 +658,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vsunr8"
+                                <Spinner
+                                    android:id="@+id/sunr8"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -678,13 +690,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vsunc9"
+                                <Spinner
+                                    android:id="@+id/sunc9"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -701,13 +713,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vsunr9"
+                                <Spinner
+                                    android:id="@+id/sunr9"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -765,13 +777,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vmonc1"
+                                <Spinner
+                                    android:id="@+id/monc1"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -788,13 +800,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vmonr1"
+                                <Spinner
+                                    android:id="@+id/monr1"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -820,13 +832,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vmonc2"
+                                <Spinner
+                                    android:id="@+id/monc2"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -843,13 +855,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vmonr2"
+                                <Spinner
+                                    android:id="@+id/monr2"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -875,13 +887,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vmonc3"
+                                <Spinner
+                                    android:id="@+id/monc3"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -898,13 +910,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vmonr3"
+                                <Spinner
+                                    android:id="@+id/monr3"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -930,13 +942,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vmonc4"
+                                <Spinner
+                                    android:id="@+id/monc4"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -953,13 +965,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vmonr4"
+                                <Spinner
+                                    android:id="@+id/monr4"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -985,13 +997,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vmonc5"
+                                <Spinner
+                                    android:id="@+id/monc5"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1008,13 +1020,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vmonr5"
+                                <Spinner
+                                    android:id="@+id/monr5"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1040,13 +1052,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vmonc6"
+                                <Spinner
+                                    android:id="@+id/monc6"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1063,13 +1075,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vmonr6"
+                                <Spinner
+                                    android:id="@+id/monr6"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1095,13 +1107,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vmonc7"
+                                <Spinner
+                                    android:id="@+id/monc7"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1118,13 +1130,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vmonr7"
+                                <Spinner
+                                    android:id="@+id/monr7"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1150,13 +1162,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vmonc8"
+                                <Spinner
+                                    android:id="@+id/monc8"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1173,13 +1185,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vmonr8"
+                                <Spinner
+                                    android:id="@+id/monr8"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1205,13 +1217,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vmonc9"
+                                <Spinner
+                                    android:id="@+id/monc9"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1228,13 +1240,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vmonr9"
+                                <Spinner
+                                    android:id="@+id/monr9"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1294,13 +1306,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vtuec1"
+                                <Spinner
+                                    android:id="@+id/tuec1"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1317,13 +1329,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vtuer1"
+                                <Spinner
+                                    android:id="@+id/tuer1"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1349,13 +1361,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vtuec2"
+                                <Spinner
+                                    android:id="@+id/tuec2"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1372,13 +1384,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vtuer2"
+                                <Spinner
+                                    android:id="@+id/tuer2"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1404,13 +1416,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vtuec3"
+                                <Spinner
+                                    android:id="@+id/tuec3"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1427,13 +1439,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vtuer3"
+                                <Spinner
+                                    android:id="@+id/tuer3"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1459,13 +1471,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vtuec4"
+                                <Spinner
+                                    android:id="@+id/tuec4"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1482,13 +1494,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vtuer4"
+                                <Spinner
+                                    android:id="@+id/tuer4"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1514,13 +1526,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vtuec5"
+                                <Spinner
+                                    android:id="@+id/tuec5"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1537,13 +1549,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vtuer5"
+                                <Spinner
+                                    android:id="@+id/tuer5"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1569,13 +1581,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vtuec6"
+                                <Spinner
+                                    android:id="@+id/tuec6"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1592,13 +1604,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vtuer6"
+                                <Spinner
+                                    android:id="@+id/tuer6"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1624,13 +1636,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vtuec7"
+                                <Spinner
+                                    android:id="@+id/tuec7"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1647,13 +1659,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vtuer7"
+                                <Spinner
+                                    android:id="@+id/tuer7"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1679,13 +1691,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vtuec8"
+                                <Spinner
+                                    android:id="@+id/tuec8"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1702,13 +1714,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vtuer8"
+                                <Spinner
+                                    android:id="@+id/tuer8"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1734,13 +1746,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vtuec9"
+                                <Spinner
+                                    android:id="@+id/tuec9"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1757,13 +1769,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vtuer9"
+                                <Spinner
+                                    android:id="@+id/tuer9"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1825,13 +1837,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vwedc1"
+                                <Spinner
+                                    android:id="@+id/wedc1"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1848,13 +1860,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vwedr1"
+                                <Spinner
+                                    android:id="@+id/wedr1"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1880,13 +1892,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vwedc2"
+                                <Spinner
+                                    android:id="@+id/wedc2"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1903,13 +1915,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vwedr2"
+                                <Spinner
+                                    android:id="@+id/wedr2"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1935,13 +1947,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vwedc3"
+                                <Spinner
+                                    android:id="@+id/wedc3"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1958,13 +1970,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vwedr3"
+                                <Spinner
+                                    android:id="@+id/wedr3"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -1990,13 +2002,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vwedc4"
+                                <Spinner
+                                    android:id="@+id/wedc4"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2013,13 +2025,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vwedr4"
+                                <Spinner
+                                    android:id="@+id/wedr4"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2045,13 +2057,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vwedc5"
+                                <Spinner
+                                    android:id="@+id/wedc5"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2068,13 +2080,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vwedr5"
+                                <Spinner
+                                    android:id="@+id/wedr5"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2100,13 +2112,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vwedc6"
+                                <Spinner
+                                    android:id="@+id/wedc6"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2123,13 +2135,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vwedr6"
+                                <Spinner
+                                    android:id="@+id/wedr6"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2155,13 +2167,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vwedc7"
+                                <Spinner
+                                    android:id="@+id/wedc7"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2178,13 +2190,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vwedr7"
+                                <Spinner
+                                    android:id="@+id/wedr7"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2210,13 +2222,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vwedc8"
+                                <Spinner
+                                    android:id="@+id/wedc8"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2233,13 +2245,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vwedr8"
+                                <Spinner
+                                    android:id="@+id/wedr8"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2265,13 +2277,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vwedc9"
+                                <Spinner
+                                    android:id="@+id/wedc9"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2288,13 +2300,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vwedr9"
+                                <Spinner
+                                    android:id="@+id/wedr9"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2356,13 +2368,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vthuc1"
+                                <Spinner
+                                    android:id="@+id/thuc1"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2379,13 +2391,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vthur1"
+                                <Spinner
+                                    android:id="@+id/thur1"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2411,13 +2423,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vthuc2"
+                                <Spinner
+                                    android:id="@+id/thuc2"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2434,13 +2446,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vthur2"
+                                <Spinner
+                                    android:id="@+id/thur2"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2466,13 +2478,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vthuc3"
+                                <Spinner
+                                    android:id="@+id/thuc3"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2489,13 +2501,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vthur3"
+                                <Spinner
+                                    android:id="@+id/thur3"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2521,13 +2533,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vthuc4"
+                                <Spinner
+                                    android:id="@+id/thuc4"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2544,13 +2556,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vthur4"
+                                <Spinner
+                                    android:id="@+id/thur4"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2576,13 +2588,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vthuc5"
+                                <Spinner
+                                    android:id="@+id/thuc5"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2599,13 +2611,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vthur5"
+                                <Spinner
+                                    android:id="@+id/thur5"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2631,13 +2643,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vthuc6"
+                                <Spinner
+                                    android:id="@+id/thuc6"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2654,13 +2666,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vthur6"
+                                <Spinner
+                                    android:id="@+id/thur6"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2686,13 +2698,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vthuc7"
+                                <Spinner
+                                    android:id="@+id/thuc7"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2709,13 +2721,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vthur7"
+                                <Spinner
+                                    android:id="@+id/thur7"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2741,13 +2753,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vthuc8"
+                                <Spinner
+                                    android:id="@+id/thuc8"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2764,13 +2776,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vthur8"
+                                <Spinner
+                                    android:id="@+id/thur8"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2796,13 +2808,13 @@
                                 android:layout_height="40dp"
                                 android:layout_marginHorizontal="5dp"
                                 >
-                                <TextView
-                                    android:id="@+id/vthuc9"
+                                <Spinner
+                                    android:id="@+id/thuc9"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2819,13 +2831,13 @@
                                 android:layout_marginHorizontal="5dp"
 
                                 >
-                                <TextView
-                                    android:id="@+id/vthur9"
+                                <Spinner
+                                    android:id="@+id/thur9"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:textAlignment="center"
                                     android:paddingVertical="10dp"
-                                    android:textSize="18sp"
+                                    android:textSize="22sp"
                                     android:textStyle="bold"
                                     android:textColor="@color/black"
                                     android:background="@color/bg_color"
@@ -2844,9 +2856,59 @@
 
 
 
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        >
+
+
+
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/updatebtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="50dp"
+                            android:text="Update"
+                            app:cornerRadius="10dp"
+                            android:textColor="@color/white"
+                            android:backgroundTint="@color/button_color"
+                            android:layout_marginBottom="50dp"
+                            android:paddingHorizontal="40dp"
+                            android:paddingVertical="10dp"
+                            />
+
+
+
+
+
+
+
+
+
+
+
+                    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
                 </LinearLayout>
 
+
             </HorizontalScrollView>
+
 
         </LinearLayout>
 
@@ -2869,6 +2931,4 @@
 
 
 
-
-
-</LinearLayout>
+</RelativeLayout>

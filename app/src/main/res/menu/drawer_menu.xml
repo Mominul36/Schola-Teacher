@@ -7,7 +7,7 @@
     <item
         android:id="@+id/nav_advising_batch"
         android:title="Advising Batch"
-        android:icon="@drawable/ic_student_request"/>
+        android:icon="@drawable/ic_batch"/>
 
 
     <item
@@ -20,6 +20,17 @@
         android:title="CGPA Calculator"
         android:icon="@drawable/ic_cgpa_calculator"/>
 
+    <item
+        android:id="@+id/nav_question_bank"
+        android:title="Question Bank"
+        android:icon="@drawable/ic_question"/>
+
+
+    <item
+        android:id="@+id/nav_notice"
+        android:title="Notice"
+        android:icon="@drawable/notice"/>
+
 
     <item
         android:title=""
@@ -29,13 +40,7 @@
         android:title=""
         />
 
-    <item
-        android:title=""
-        />
 
-    <item
-        android:title=""
-        />
 
     <item
         android:id="@+id/nav_settings"
